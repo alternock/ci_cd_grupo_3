@@ -25,6 +25,12 @@ jobs:
           echo " 3 repo: ${{ github.repository }}"
           echo " 4 ref: ${{ github.ref_name }}"
           echo " 5 global: $GLOBAL_DATA "
-      
-    
-      
+       
+      - name: condiciones 1
+        if: github.event_name == 'push'
+        run: echo "evento push activado"
+
+      - name: condiciones 2
+        if: github.event_name == 'pull_request'   
+        run: echo "evento pull request activado"
+        
